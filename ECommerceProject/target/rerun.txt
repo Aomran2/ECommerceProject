@@ -1,0 +1,1 @@
+file:src/main/resources/Features/F06_homeSliders.feature:4:11
