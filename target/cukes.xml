@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="223.521" tests="19" skipped="0" failures="4" errors="0">
+<testcase classname="F01_Register | users could register with new accounts" name="guest user could register with valid data successfully" time="14.268">
+<system-out><![CDATA[
+Given user go to register page..............................................passed
+When user select gender type................................................passed
+And user enter first name "automation" and last name "tester"...............passed
+And user enter date of birth................................................passed
+And user enter email "test@example.com" field...............................passed
+And user fills Password fields "P@ssw0rd" "P@ssw0rd"........................passed
+And user clicks on register button..........................................passed
+Then success message is displayed...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F02_Login | users could use login functionality to use their accounts" name="user could login with valid email and password" time="9.6">
+<system-out><![CDATA[
+Given user go to login page.................................................passed
+When user login with "test@example.com" and "P@ssw0rd"......................passed
+And user press on login button..............................................passed
+Then user login to the system successfully..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F02_Login | users could use login functionality to use their accounts" name="user could login with invalid email and password" time="9.14">
+<system-out><![CDATA[
+Given user go to login page.................................................passed
+When user login with "wrong@example.com" and "P@ssw0rd".....................passed
+And user press on login button..............................................passed
+Then user could not login to the system.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F03_currencies | User Check Currency sign" name="User could change the currency" time="8.59">
+<system-out><![CDATA[
+Given user go to home page..................................................passed
+When select Euro currency from the dropdown menu............................passed
+Then Euro Symbol is shown on the 4 products that are displayed in Home page.passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user search for products" name="Logged user will be able to search using product name - Example #1.1" time="11.435">
+<failure type="java.lang.AssertionError" message="The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false]">
+<![CDATA[java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at org.example.stepDefs.D04_searchStepDef.SucessAssertion(D04_searchStepDef.java:49)
+	at ✽.search results should appears and contain "book"(file:///C:/Users/alimu/Downloads/Compressed/ECommerceProject/src/main/resources/Features/F04_Search.feature:9)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user logged in........................................................passed
+And user located in home page...............................................passed
+When user enter product name as "book"......................................passed
+And user press enter........................................................passed
+Then search results should appears and contain "book".......................failed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user search for products" name="Logged user will be able to search using product name - Example #1.2" time="10.309">
+<system-out><![CDATA[
+Given user logged in........................................................passed
+And user located in home page...............................................passed
+When user enter product name as "laptop"....................................passed
+And user press enter........................................................passed
+Then search results should appears and contain "laptop".....................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user search for products" name="Logged user will be able to search using product name - Example #1.3" time="11.987">
+<system-out><![CDATA[
+Given user logged in........................................................passed
+And user located in home page...............................................passed
+When user enter product name as "nike"......................................passed
+And user press enter........................................................passed
+Then search results should appears and contain "nike".......................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user search for products" name="Logged user will be able to search for product using sku - Example #1.1" time="12.428">
+<system-out><![CDATA[
+Given user logged in........................................................passed
+And user located in home page...............................................passed
+When user enter product sku as "SCI_FAITH"..................................passed
+And user press enter........................................................passed
+Then search result should appears and contain "SCI_FAITH"...................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user search for products" name="Logged user will be able to search for product using sku - Example #1.2" time="12.706">
+<system-out><![CDATA[
+Given user logged in........................................................passed
+And user located in home page...............................................passed
+When user enter product sku as "APPLE_CAM"..................................passed
+And user press enter........................................................passed
+Then search result should appears and contain "APPLE_CAM"...................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user search for products" name="Logged user will be able to search for product using sku - Example #1.3" time="12.431">
+<system-out><![CDATA[
+Given user logged in........................................................passed
+And user located in home page...............................................passed
+When user enter product sku as "SF_PRO_11"..................................passed
+And user press enter........................................................passed
+Then search result should appears and contain "SF_PRO_11"...................passed
+]]></system-out>
+</testcase>
+<testcase classname="F05_hoverCategories | User hover over on random Category then clicks on it" name="Logged user will be able to select different Categories" time="20.88">
+<system-out><![CDATA[
+Given user logged in........................................................passed
+And user located in home page...............................................passed
+When user hovers over any random category...................................passed
+And user clicks on sub-category in case found...............................passed
+Then page title should contains category or sub-category name...............passed
+]]></system-out>
+</testcase>
+<testcase classname="HomePage slider" name="User can navigate to products through slider(1)" time="10.996">
+<failure type="java.lang.AssertionError" message="The following asserts failed:
+	expected [true] but found [false]">
+<![CDATA[java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at org.example.stepDefs.D06_homeSlidersStepDef.pageOpenSlider(D06_homeSlidersStepDef.java:53)
+	at ✽.user should be directed to "https://demo.nopcommerce.com/nokia-lumia-1020"(file:///C:/Users/alimu/Downloads/Compressed/ECommerceProject/src/main/resources/Features/F06_homeSliders.feature:8)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user go to home page..................................................passed
+And user scroll down........................................................passed
+When user click on first slider.............................................passed
+Then user should be directed to "https://demo.nopcommerce.com/nokia-lumia-1020".failed
+]]></system-out>
+</testcase>
+<testcase classname="HomePage slider" name="User can navigate to products through slider(2)" time="10.943">
+<failure type="java.lang.AssertionError" message="The following asserts failed:
+	expected [true] but found [false]">
+<![CDATA[java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at org.example.stepDefs.D06_homeSlidersStepDef.pageOpenSlider(D06_homeSlidersStepDef.java:53)
+	at ✽.user should be directed to "https://demo.nopcommerce.com/iphone-6"(file:///C:/Users/alimu/Downloads/Compressed/ECommerceProject/src/main/resources/Features/F06_homeSliders.feature:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user go to home page..................................................passed
+And user scroll down........................................................passed
+When user click on second slider............................................passed
+Then user should be directed to "https://demo.nopcommerce.com/iphone-6".....failed
+]]></system-out>
+</testcase>
+<testcase classname="Follow us on social media" name="User could follow us on facebook" time="9.913">
+<system-out><![CDATA[
+Given user go to home page..................................................passed
+When clicks on facebook link................................................passed
+And user moves to new tab...................................................passed
+Then page url should be "https://www.facebook.com/nopCommerce"..............passed
+]]></system-out>
+</testcase>
+<testcase classname="Follow us on social media" name="User could follow us on twitter" time="11.321">
+<system-out><![CDATA[
+Given user go to home page..................................................passed
+When clicks on twitter link.................................................passed
+And user moves to new tab...................................................passed
+Then page url should be "https://twitter.com/nopCommerce"...................passed
+]]></system-out>
+</testcase>
+<testcase classname="Follow us on social media" name="User could follow us on rss" time="8.224">
+<system-out><![CDATA[
+Given user go to home page..................................................passed
+When clicks on rss link.....................................................passed
+And user moves to new tab...................................................passed
+Then page url should be "https://demo.nopcommerce.com/news/rss/1"...........passed
+]]></system-out>
+</testcase>
+<testcase classname="Follow us on social media" name="User could follow us on youtube" time="13.529">
+<system-out><![CDATA[
+Given user go to home page..................................................passed
+When clicks on youtube link.................................................passed
+And user moves to new tab...................................................passed
+Then page url should be "https://www.youtube.com/user/nopCommerce"..........passed
+]]></system-out>
+</testcase>
+<testcase classname="Wishlist" name="Logged user could add different products to Wishlist[1]" time="9.844">
+<system-out><![CDATA[
+Given user logged in........................................................passed
+And user go to home page....................................................passed
+When user click add to wishlist button......................................passed
+Then item should be added to wishlist.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Wishlist" name="Logged user could add different products to Wishlist[2]" time="14.489">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to no longer be visible: By.cssSelector: p[class=&quot;content&quot;] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\alimu\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56208}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56208/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: db1447e3c73aa28fb2c00c53c97abd63">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.cssSelector: p[class="content"] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\alimu\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56208}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56208/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: db1447e3c73aa28fb2c00c53c97abd63
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at org.example.stepDefs.D08_WishlistStepDef.waitForMessageToDisappear(D08_WishlistStepDef.java:41)
+	at ✽.user wait until success message disappears(file:///C:/Users/alimu/Downloads/Compressed/ECommerceProject/src/main/resources/Features/F08_Wishlist.feature:13)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user logged in........................................................passed
+And user go to home page....................................................passed
+When user click add to wishlist button......................................passed
+And user wait until success message disappears..............................failed
+And user clicks wishlist tab................................................skipped
+Then item quantity in wishlist should be > 0................................skipped
+]]></system-out>
+</testcase>
+</testsuite>
